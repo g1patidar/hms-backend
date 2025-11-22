@@ -47,9 +47,12 @@ function getCookieBaseOptions() {
     typeof secureEnv === "string" ? secureEnv.toLowerCase() === "true" : isProd;
   const domain = process.env.COOKIE_DOMAIN || undefined;
 
+  console.log(sameSiteEnv,"sameSiteEnv")
+  console.log(isProd,"isProd")
+
   return {
     httpOnly: true,
-    secure: isProd,
+    secure: true,
     sameSite,
     path: "/",
     ...(domain ? { domain } : {}),
