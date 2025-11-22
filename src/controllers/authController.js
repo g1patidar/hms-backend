@@ -49,8 +49,8 @@ function getCookieBaseOptions() {
 
   return {
     httpOnly: true,
-    secure: true,
-    sameSite: "lax",
+    secure: isProd,
+    sameSite,
     path: "/",
     ...(domain ? { domain } : {}),
   };
